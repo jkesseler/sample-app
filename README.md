@@ -10,7 +10,8 @@ It's a basic project setup with the following:
 Clone this repo and `yarn install`
 
 # Commands
-`yarn start` Starts the client and server
-`yarn build`
+`yarn start` Starts the client in development
+`yarn build` Run production build
+`yarn serve` Serve production build with SSR
 `yarn test`
 `yarn lint`
