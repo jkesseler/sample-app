@@ -22,7 +22,7 @@ import App from '../client/components/TodoApp';
 
 // This file only exists after the build command has been run
 // eslint-disable-next-line import/no-unresolved
-import manifest from '../build/asset-manifest.json';
+import manifest from '../../build/asset-manifest.json';
 
 // LOADER
 export default (req, res) => {
@@ -50,7 +50,7 @@ export default (req, res) => {
 
   // Load HTML file from our build
   fs.readFile(
-    path.resolve(__dirname, '../build/index.html'),
+    path.resolve(__dirname, '../../build/index.html'),
     'utf8',
     (err, htmlData) => {
       if (err) {

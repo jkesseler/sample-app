@@ -5,9 +5,7 @@ import thunk from 'redux-thunk';
 import { createBrowserHistory, createMemoryHistory } from 'history';
 import rootReducer from '../client/reducers';
 
-const isServer = typeof window !== 'undefined'
-    && window.document
-    && window.document.createElement;
+const isServer = typeof window === 'undefined';
 
 
 export default (url = '/') => {

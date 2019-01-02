@@ -1,6 +1,6 @@
 import uuidv4 from 'uuid/v4';
 
-const initialState = { todos: [] };
+const initialState = [];
 const todos = (state = initialState, action) => {
   switch (action.type) {
     case 'ADD_TODO': {
@@ -22,10 +22,7 @@ const todos = (state = initialState, action) => {
         todo => (todo.id === action.id ? { ...todo, checked: !todo.checked } : todo),
       );
     case 'REMOVE_TODO':
-      return {
-        ...state,
-        todos: state.filter(todo => todo.id !== action.id),
-      };
+      return state.filter(todo => todo.id !== action.id);
 
     default:
       return state;
