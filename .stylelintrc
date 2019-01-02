@@ -1,0 +1,14 @@
+{
+    "extends": "stylelint-config-recommended",
+    "plugins": [
+      "stylelint-order"
+    ],
+    "rules": {
+        "font-family-name-quotes": "always-where-recommended",
+        "order/order": [
+            "custom-properties",
+            "declarations"
+        ],
+        "order/properties-alphabetical-order": true
+    }
+}
