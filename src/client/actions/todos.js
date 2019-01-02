@@ -12,3 +12,7 @@ export const removeTodo = id => ({
   type: 'REMOVE_TODO',
   id,
 });
+
+export const loadTodos = () => ({
+  type: 'TODO_DATA_LOAD',
+});

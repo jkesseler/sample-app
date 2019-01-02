@@ -13,7 +13,6 @@ export class AddTodo extends Component {
     this.state = { value: '' };
   }
 
-
   handleInputChange = (event) => {
     this.setState({ value: event.target.value });
   };
