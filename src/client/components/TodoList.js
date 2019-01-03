@@ -4,11 +4,11 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { List, Paper } from '@material-ui/core';
 
-import * as actions from '../actions/todos';
+import * as actions from '../../state/todos/actions';
 import TodoListItem from './TodoListItem';
 
 
-export const TodoList = ({ todos, toggleTodo, removeTodo }) => {
+export const TodoList = ({ todos, toggleTodo, deleteTodo }) => {
   if (todos && todos.length > 0) {
     return (
       <Paper>
@@ -18,7 +18,7 @@ export const TodoList = ({ todos, toggleTodo, removeTodo }) => {
               {...todo}
               key={todo.id}
               divider={idx !== todos.length - 1}
-              onButtonClick={() => removeTodo(todo)}
+              onButtonClick={() => deleteTodo(todo)}
               onCheckboxToggle={() => toggleTodo(todo)}
             />
           ))}
@@ -35,7 +35,7 @@ TodoList.propTypes = {
     text: PropTypes.string.isRequried,
   })),
   toggleTodo: PropTypes.func.isRequired,
-  removeTodo: PropTypes.func.isRequired,
+  deleteTodo: PropTypes.func.isRequired,
 };
 
 TodoList.defaultProps = {
@@ -48,7 +48,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   toggleTodo: todo => dispatch(actions.toggleTodo(todo.id)),
-  removeTodo: todo => dispatch(actions.removeTodo(todo.id)),
+  deleteTodo: todo => dispatch(actions.deleteTodo(todo.id)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(TodoList);

@@ -2,7 +2,7 @@ import axios from 'axios';
 import settings from './settings';
 
 export default (method = 'get', data = null) => {
-  axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+  axios.defaults.headers.post['Content-Type'] = 'application/json';
   axios.defaults.baseURL = settings.apiUrl;
 
   return axios({
