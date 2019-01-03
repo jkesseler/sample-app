@@ -12,3 +12,7 @@ export const removeTodo = id => ({
   type: 'REMOVE_TODO',
   id,
 });
+
+export const loadTodos = () => ({
+  type: 'HYDRATE_TODOS_START',
+});

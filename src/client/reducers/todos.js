@@ -3,6 +3,9 @@ import uuidv4 from 'uuid/v4';
 const initialState = [];
 const todos = (state = initialState, action) => {
   switch (action.type) {
+    case 'TODO_DATA_RECEIVED':
+      return action.data;
+
     case 'ADD_TODO': {
       if (!action.text) {
         return state;

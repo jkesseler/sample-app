@@ -1,17 +1,33 @@
-import React from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import CssBaseline from '@material-ui/core/CssBaseline';
-
+import { loadTodos } from '../actions/todos';
 import Layout from './Layout';
 import AddTodo from './AddTodo';
 import TodoList from './TodoList';
 
-export const TodoApp = () => (
-  <CssBaseline>
-    <Layout>
-      <AddTodo />
-      <TodoList />
-    </Layout>
-  </CssBaseline>
-);
 
-export default TodoApp;
+class TodoApp extends Component {
+  componentDidMount() {
+    const { dispatch } = this.props;
+    dispatch(loadTodos());
+  }
+
+  render() {
+    return (
+      <CssBaseline>
+        <Layout>
+          <AddTodo />
+          <TodoList />
+        </Layout>
+      </CssBaseline>
+    );
+  }
+}
+
+TodoApp.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+};
+
+export default connect(state => ({ todos: state.todos }))(TodoApp);
