@@ -5,7 +5,7 @@ import {
   Button, Grid, Paper, TextField,
 } from '@material-ui/core';
 
-import * as actions from '../actions/todos';
+import * as actions from '../../state/todos/actions';
 
 export class AddTodo extends Component {
   constructor(props) {
