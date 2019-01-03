@@ -10,11 +10,7 @@ const persistTodoMiddleware = store => next => (action) => {
     case actionTypes.LOAD_START:
       fetcher()
         .then((response) => {
-          const state = store.getState();
-
-          if (response.data.todos && response.data.todos.length > 0) {
-            next(loadTodosSuccess(state, response.data.todos));
-          }
+          next(loadTodosSuccess(response.data));
         }).catch((err) => {
           next(loadTodosFail(err));
         });

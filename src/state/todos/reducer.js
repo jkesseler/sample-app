@@ -3,7 +3,8 @@ import * as actionTypes from './action-types';
 
 // Abstracting reducer functions makes it easier to unit test
 export function todoLoadSuccess(state, action) {
-  return { ...state, ...action };
+  const { todos } = action;
+  return state.concat(todos);
 }
 
 export function todoAdd(state, action) {
@@ -38,7 +39,7 @@ export function removeTodo(state, action) {
 export default function todosReducer(state = [], action) {
   switch (action.type) {
     case actionTypes.LOAD_SUCCESS:
-      return todoLoadSuccess(action);
+      return todoLoadSuccess(state, action);
 
     case actionTypes.ADD:
       return todoAdd(state, action);

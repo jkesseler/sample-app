@@ -26,16 +26,18 @@ This is for demo purposes only! The key and bin id are easily viewed in dev-tool
 
 
 # Application structure
+Loosely based on https://github.com/FortechRomania/react-redux-complete-example
+
 ## Folder Layout
 -- src
   -- public
   -- server
   -- app
-    -- modules
-      -- authentication
-        |- actions / reducers / middleware
-      -- todos
-        |- actions / reducers / middleware
+    -- state
+      -- module-a (per feature )
+        |- action types/ actions / reducers / middleware
+      -- module-b
+        |- action types/ actions / reducers / middleware
     -- components
       -- component-a
         |- stateless / stateful / connected
