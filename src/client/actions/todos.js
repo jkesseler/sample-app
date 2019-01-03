@@ -14,5 +14,5 @@ export const removeTodo = id => ({
 });
 
 export const loadTodos = () => ({
-  type: 'TODO_DATA_LOAD',
+  type: 'HYDRATE_TODOS_START',
 });

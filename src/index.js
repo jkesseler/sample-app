@@ -8,7 +8,6 @@ import createStore from './shared/store';
 
 import TodoApp from './client/components/TodoApp';
 
-// Create a store and get back itself and its history object
 const { store } = createStore();
 
 // In local development use <ConnectedRouter /> rather than <StaticRouter /> on the server

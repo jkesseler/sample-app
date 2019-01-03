@@ -1,27 +1,28 @@
 import fetcher from './fetcher';
 
-const todoMiddleware = store => next => (action) => {
+const persistTodoMiddleware = store => next => (action) => {
   // Pass all actions through by default
   next(action);
 
 
   switch (action.type) {
-    // TODO: Hydrate state on server side
-    case 'TODO_DATA_LOAD':
+    // TODO: Load todo's server side and create intialState there
+    case 'HYDRATE_TODOS_START':
       fetcher()
         .then((response) => {
           next({
-            type: 'TODO_DATA_RECEIVED',
+            type: 'HYDRATE_TODOS_DONE',
             data: response.data.todos,
           });
         }).catch((err) => {
           next({
-            type: 'TODO_DATA_ERROR',
+            type: 'HYDRATE_TODOS_ERROR',
             err,
           });
         });
       break;
 
+    // On any state mutation the entire state is stored in JSONBIN.io
     case 'ADD_TODO':
     case 'TOGGLE_TODO':
     case 'REMOVE_TODO': {
@@ -35,4 +36,4 @@ const todoMiddleware = store => next => (action) => {
   }
 };
 
-export default todoMiddleware;
+export default persistTodoMiddleware;

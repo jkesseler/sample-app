@@ -4,7 +4,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 // import { connectRouter, routerMiddleware } from 'connected-react-router';
 import thunk from 'redux-thunk';
 import { createBrowserHistory, createMemoryHistory } from 'history';
-import todosServiceMiddleware from './todos-service-middleware';
+import persistTodoMiddleware from './persist-todos-middleware';
 import rootReducer from '../client/reducers';
 
 const isServer = typeof window === 'undefined';
@@ -20,7 +20,7 @@ export default (url = '/') => {
 
   const middleware = [
     thunk,
-    todosServiceMiddleware,
+    persistTodoMiddleware,
     logger, // Important, logger always has to be the last middleware in the stack
   ];
 
@@ -28,8 +28,9 @@ export default (url = '/') => {
     applyMiddleware(...middleware),
   );
 
-  // Get state from server if it's available
-  const initialState = !isServer ? window.__INITIAL_STATE__ : { todos: [] };
+  // Get state from server if it's available. For a new action is kicked off at application start
+  // const initialState = !isServer ? window.__INITIAL_STATE__ : { todos: [] };
+  const initialState = { todos: [] };
 
   // Create the store
   const store = createStore(
