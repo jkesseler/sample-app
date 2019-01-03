@@ -17,11 +17,11 @@ Clone this repo and `yarn install`
 This is for demo purposes only! The key and bin id are easily viewed in dev-tools.
 
 # Commands
-`yarn start` Starts the client in development
-`yarn build` Run production build
-`yarn serve` Serve production build with SSR
-`yarn test`
-`yarn lint`
+- `yarn start` Starts the client in development
+- `yarn build` Run production build
+- `yarn serve` Serve production build with SSR
+- `yarn test`
+= `yarn lint`
 
 
 
@@ -29,6 +29,7 @@ This is for demo purposes only! The key and bin id are easily viewed in dev-tool
 Loosely based on https://github.com/FortechRomania/react-redux-complete-example
 
 ## Folder Layout
+```
 -- src
   -- public
   -- server
@@ -43,6 +44,7 @@ Loosely based on https://github.com/FortechRomania/react-redux-complete-example
         |- stateless / stateful / connected
       -- component-b
       -- component-c
+```
 
 ## Modules
 
