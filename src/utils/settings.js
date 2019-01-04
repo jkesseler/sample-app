@@ -17,6 +17,10 @@ const settings = {
 
     return `${url}${id}`;
   },
+
+  get requestTimeout() {
+    return requireEnvVar('REACT_APP_REQUEST_TIMEOUT_MS', 500);
+  },
 };
 
 export default settings;
