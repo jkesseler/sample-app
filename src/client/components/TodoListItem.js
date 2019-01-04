@@ -10,7 +10,7 @@ import {
   ListItemText,
 } from '@material-ui/core';
 
-const TodoListItem = ({
+export const TodoListItem = ({
   divider,
   text,
   checked,

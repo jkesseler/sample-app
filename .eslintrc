@@ -16,7 +16,7 @@
     "complexity": ["warn", 10],
     "import/imports-first": ["error", "absolute-first"],
     "import/newline-after-import": "error",
-    "import/no-extraneous-dependencies": ["error", {"devDependencies": ["setupTests.js", "**/__tests__/*"]}],
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": ["*/setupTests.js", "**/__tests__/*"]}],
     // This rule conflicts exporting connected components
     // https://github.com/benmosher/eslint-plugin-import/issues/544#issuecomment-244976007
     "import/no-named-as-default": ["off"],
