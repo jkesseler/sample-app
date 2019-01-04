@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { List, Paper } from '@material-ui/core';
 
-import * as actions from '../../state/todos/actions';
+import * as actions from '../state/todos/actions';
 import TodoListItem from './TodoListItem';
 
 

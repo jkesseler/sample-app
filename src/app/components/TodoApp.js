@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import { loadTodos } from '../../state/todos/actions';
+import { loadTodos } from '../state/todos/actions';
 import Layout from './Layout';
 import AddTodo from './AddTodo';
 import TodoList from './TodoList';

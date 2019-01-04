@@ -16,13 +16,13 @@ Clone this repo and `yarn install`
 *Please note:*
 This is for demo purposes only! The key and bin id are easily viewed in dev-tools.
 
+
 # Commands
 - `yarn start` Starts the client in development
 - `yarn build` Run production build
 - `yarn serve` Serve production build with SSR
 - `yarn test`
-= `yarn lint`
-
+-`yarn lint`
 
 
 # Application structure
@@ -51,9 +51,8 @@ Loosely based on https://github.com/FortechRomania/react-redux-complete-example
 
 ## Components
   Each component file exports a named stateless (or with local state) function or class
-  and a default connected class. This is done so components can easily be tested without
-  mocking an entire state.
+  and a default class that is memoized, connected to a state or otherwise hard to test.
   ```
     export MyComponent = (props) => (<SomeJSX />);
-    export default connect(mapStateToProps, mapDispatchToProps)(<SomeJSX />);
+    export default memo(<SomeJSX />);
   ```

@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import Loadable from 'react-loadable';
 import { Frontload } from 'react-frontload';
-import TodoApp from './client/components/TodoApp';
-import configureStore from './state';
+import TodoApp from './app/components/TodoApp';
+import configureStore from './app/state';
 
 const storeInstance = configureStore();
 
