@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoListItem renders with only all props 1`] = `
+<WithStyles(ListItem)
+  divider={true}
+>
+  <WithStyles(Checkbox)
+    checked={false}
+    disableRipple={true}
+    onClick={[Function]}
+  />
+  <WithStyles(ListItemText)
+    primary="some string"
+  />
+  <WithStyles(ListItemSecondaryAction)>
+    <WithStyles(IconButton)
+      aria-label="Delete todo"
+      onClick={[Function]}
+    >
+      <pure(DeleteOutlinedIcon) />
+    </WithStyles(IconButton)>
+  </WithStyles(ListItemSecondaryAction)>
+</WithStyles(ListItem)>
+`;
+
+exports[`TodoListItem renders with only required props 1`] = `
+<WithStyles(ListItem)
+  divider={false}
+>
+  <WithStyles(Checkbox)
+    checked={false}
+    disableRipple={true}
+    onClick={[Function]}
+  />
+  <WithStyles(ListItemText)
+    primary="some string"
+  />
+  <WithStyles(ListItemSecondaryAction)>
+    <WithStyles(IconButton)
+      aria-label="Delete todo"
+      onClick={[Function]}
+    >
+      <pure(DeleteOutlinedIcon) />
+    </WithStyles(IconButton)>
+  </WithStyles(ListItemSecondaryAction)>
+</WithStyles(ListItem)>
+`;

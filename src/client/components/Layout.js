@@ -5,7 +5,7 @@ import {
   AppBar, Paper, Toolbar, Typography,
 } from '@material-ui/core';
 
-const Layout = ({ children }) => (
+export const Layout = ({ children }) => (
   <Paper
     elevation={0}
     style={{
