@@ -3,15 +3,18 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import Loadable from 'react-loadable';
 import { Frontload } from 'react-frontload';
-import TodoApp from './app/components/TodoApp';
 import configureStore from './app/state';
+import AppBase from './app/components/AppBase';
+import Todos from './app/views/Todos';
 
 const storeInstance = configureStore();
 
 const Application = (
   <Provider store={storeInstance}>
     <Frontload noServerRender>
-      <TodoApp />
+      <AppBase>
+        <Todos />
+      </AppBase>
     </Frontload>
   </Provider>
 );

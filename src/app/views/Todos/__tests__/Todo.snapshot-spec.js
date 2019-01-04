@@ -2,11 +2,11 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 
-import AddTodo from '../AddTodo';
+import Todos from '../Todos';
 
-describe('AddTodo', () => {
+describe('TodoApp', () => {
   it('renders without crashing', () => {
-    const component = shallow(<AddTodo />);
+    const component = shallow(<Todos />);
     expect(shallowToJson(component)).toMatchSnapshot();
   });
 });

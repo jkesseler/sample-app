@@ -44,9 +44,17 @@ Loosely based on https://github.com/FortechRomania/react-redux-complete-example
         |- stateless / stateful / connected
       -- component-b
       -- component-c
+    -- screens
+      |- Home
+      |- Contact
+      |- Another view
 ```
 
 ## Modules
+
+## Views
+A view is a collection of components composed in a layout and has a route (or entry point)
+
 
 
 ## Components

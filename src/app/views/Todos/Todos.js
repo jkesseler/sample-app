@@ -1,12 +1,9 @@
-/** TODO: Remove this file and create a base layout file */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import { loadTodos } from '../state/todos/actions';
-import Layout from './Layout';
-import AddTodo from './AddTodo';
-import TodoList from './TodoList';
+import { loadTodos } from '../../state/todos/actions';
+import AddTodo from '../../components/AddTodo';
+import TodoList from '../../components/TodoList';
 
 
 class TodoApp extends Component {
@@ -17,12 +14,10 @@ class TodoApp extends Component {
 
   render() {
     return (
-      <CssBaseline>
-        <Layout>
-          <AddTodo />
-          <TodoList />
-        </Layout>
-      </CssBaseline>
+      <>
+        <AddTodo />
+        <TodoList />
+      </>
     );
   }
 }
