@@ -7,11 +7,6 @@
     "browser": true,
     "jest": true,
   },
-  "settings": {
-    "import/resolver": {
-      "babel-module": {}
-    }
-  },
   "rules": {
     "complexity": ["warn", 10],
     "import/imports-first": ["error", "absolute-first"],
