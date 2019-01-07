@@ -1,15 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Layout from './Layout';
+import { Paper } from '@material-ui/core';
+
+import Header from '../../components/Header';
 
 
-// TODO: Add Header, Footer and navigation
 const AppBase = ({ children }) => (
   <CssBaseline>
-    <Layout>
+    <Paper
+      elevation={0}
+      style={{
+        padding: 0,
+        margin: 0,
+        backgroundColor: '#fafafa',
+      }}
+    >
+      <Header />
       { children }
-    </Layout>
+    </Paper>
   </CssBaseline>
 );
 

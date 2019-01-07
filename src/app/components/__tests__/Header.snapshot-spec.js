@@ -1,14 +1,13 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
-// non memoized component
-import { Layout } from '../Layout';
 
-const Child = () => (<span>fake child</span>);
+// The named export is non-memoized component
+import { Header } from '../Header';
 
-describe('Layout', () => {
+describe('Header', () => {
   it('renders without crashing', () => {
-    const component = shallow(<Layout><Child /></Layout>);
+    const component = shallow(<Header />);
     expect(shallowToJson(component)).toMatchSnapshot();
   });
 });

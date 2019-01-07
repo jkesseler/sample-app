@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`AppBase renders without crashing 1`] = `
-<WithStyles(CssBaseline)>
-  <React.Memo>
-    <Child />
-  </React.Memo>
-</WithStyles(CssBaseline)>
-`;

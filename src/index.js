@@ -4,17 +4,17 @@ import { Provider } from 'react-redux';
 import Loadable from 'react-loadable';
 import { Frontload } from 'react-frontload';
 import configureStore from './app/state';
-import AppBase from './app/components/AppBase';
-import Todos from './app/views/Todos';
+import BaseView from './app/views/Base';
+
 
 const storeInstance = configureStore();
 
 const Application = (
   <Provider store={storeInstance}>
     <Frontload noServerRender>
-      <AppBase>
-        <Todos />
-      </AppBase>
+      <BaseView>
+        <p>This must be replace with the router config</p>
+      </BaseView>
     </Frontload>
   </Provider>
 );

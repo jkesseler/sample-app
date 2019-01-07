@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders without crashing 1`] = `
+<WithStyles(AppBar)
+  color="primary"
+  position="static"
+  style={
+    Object {
+      "height": 64,
+    }
+  }
+>
+  <WithStyles(Toolbar)
+    style={
+      Object {
+        "height": 60,
+      }
+    }
+  >
+    <WithStyles(Typography)
+      color="inherit"
+    >
+      Todo App
+    </WithStyles(Typography)>
+  </WithStyles(Toolbar)>
+</WithStyles(AppBar)>
+`;

@@ -27,5 +27,9 @@ TodoApp.propTypes = {
   dispatch: PropTypes.func.isRequired,
 };
 
+const mapStateToProps = state => ({
+  todos: state.todos,
+});
 
-export default connect(state => ({ todos: state.todos }))(TodoApp);
+
+export default connect(mapStateToProps)(TodoApp);

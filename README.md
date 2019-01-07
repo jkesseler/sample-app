@@ -44,23 +44,50 @@ Loosely based on https://github.com/FortechRomania/react-redux-complete-example
         |- stateless / stateful / connected
       -- component-b
       -- component-c
-    -- screens
-      |- Home
-      |- Contact
+    -- Views (page types / templates)
+      |- Base
       |- Another view
+    -- Routes
+      |- Home
+      |- Todos
+      |- Contact
 ```
 
-## Modules
+## State
+State management for a specific functional domain.
+This is roughly based on [ducks modular redux](https://github.com/erikras/ducks-modular-redux) and [re-ducs](https://github.com/alexnm/re-ducks)
 
 ## Views
 A view is a collection of components composed in a layout and has a route (or entry point)
 
 
-
 ## Components
-  Each component file exports a named stateless (or with local state) function or class
-  and a default class that is memoized, connected to a state or otherwise hard to test.
-  ```
-    export MyComponent = (props) => (<SomeJSX />);
-    export default memo(<SomeJSX />);
-  ```
+Each component file exports a named stateless (or with local state) function or class
+and a default class that is memoized, connected to a state or otherwise hard to test.
+```
+  export MyComponent = (props) => (<SomeJSX />);
+  export default memo(<SomeJSX />);
+```
+
+
+## Routes
+<!--
+TODO: Dit idee verder uitwerken 
+-->
+Lets say we have a route `/Todos`
+This rout is executed with in a View (or template)
+
+```
+const routerConfig = [
+  {
+    path: "/todos",
+    component: Todos,
+    view: Base
+  }
+]
+
+<Router>
+  <Route path="/" component={Home} />
+  <Route path="/todos" component={Todos} />
+</Router>
+```
