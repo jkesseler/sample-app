@@ -2,19 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import Loadable from 'react-loadable';
+import { BrowserRouter } from 'react-router-dom';
 import { Frontload } from 'react-frontload';
 import configureStore from './app/state';
-import BaseView from './app/views/Base';
-
+import Routes from './app/routes';
+import routerConfig from './app/routerConfig';
 
 const storeInstance = configureStore();
 
 const Application = (
   <Provider store={storeInstance}>
     <Frontload noServerRender>
-      <BaseView>
-        <p>This must be replace with the router config</p>
-      </BaseView>
+      <BrowserRouter>
+        <Routes routes={routerConfig} />
+      </BrowserRouter>
     </Frontload>
   </Provider>
 );

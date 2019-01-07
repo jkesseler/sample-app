@@ -71,23 +71,20 @@ and a default class that is memoized, connected to a state or otherwise hard to 
 
 
 ## Routes
-<!--
-TODO: Dit idee verder uitwerken 
--->
-Lets say we have a route `/Todos`
-This rout is executed with in a View (or template)
 
 ```
 const routerConfig = [
   {
-    path: "/todos",
-    component: Todos,
-    view: Base
-  }
+    component: Pages.Home,
+    layout: Layouts.Home,
+    path: '/',
+    exact: true,
+  },
+  {
+    component: Pages.Todos,
+    layout: Layouts.Default,
+    path: '/todos',
+    exact: true,
+  },
 ]
-
-<Router>
-  <Route path="/" component={Home} />
-  <Route path="/todos" component={Todos} />
-</Router>
 ```
