@@ -2,6 +2,7 @@
 - Server side rendering
 - [x] Multiple routes
 - [x] Route based layouts
+- Add slots per Layout
 - Route based code-splitting
 - Authentication and protected routes
 - API Proxy to protect API key and endpoints
