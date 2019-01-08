@@ -17,37 +17,39 @@ export class SimpleMenu extends Component {
     this.state = { isOpen: false };
   }
 
-  handleToggleMenu = () => {
+  handleToggleMenu = (event) => {
     const { isOpen } = this.state;
-    this.setState({ isOpen: !isOpen });
-  };
-
-  handleCloseMenu = () => {
-    this.setState({ isOpen: false });
+    this.setState({
+      anchorEl: event.currentTarget,
+      isOpen: !isOpen,
+    });
   };
 
   render() {
     const { menuItems } = this.props;
-    const { isOpen } = this.state;
+    const { anchorEl, isOpen } = this.state;
 
     return (
       <>
         <IconButton
-          color="inherit"
+          aria-owns={anchorEl ? 'simple-menu' : undefined}
+          aria-haspopup="true"
           aria-label="Menu"
+          color="inherit"
           onClick={this.handleToggleMenu}
         >
           <MenuIcon />
         </IconButton>
         <Menu
           id="simple-menu"
+          anchorEl={anchorEl}
           open={isOpen}
-          onClose={this.handleCloseMenu}
+          onClose={this.handleToggleMenu}
           style={{ marginTop: 16 }}
         >
           {menuItems.map(item => (
             <Link to={item.path} key={item.path} style={{ textDecoration: 'none', display: 'block' }}>
-              <MenuItem>
+              <MenuItem onClick={this.handleToggleMenu}>
                 {item.title}
               </MenuItem>
             </Link>
