@@ -7,12 +7,14 @@ const routerConfig = [
     layout: Layouts.Home,
     path: '/',
     exact: true,
+    title: 'Home',
   },
   {
     component: Pages.Todos,
     layout: Layouts.Default,
     path: '/todos',
     exact: true,
+    title: 'Todos',
   },
 ];
 

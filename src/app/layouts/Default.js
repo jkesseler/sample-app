@@ -13,7 +13,7 @@ export const Default = ({ children }) => (
       backgroundColor: '#fafafa',
     }}
   >
-    <Header />
+    <Header>Todos</Header>
     { children }
   </Paper>
 );
