@@ -71,7 +71,6 @@ and a default class that is memoized, connected to a state or otherwise hard to 
 
 
 ## Routes
-
 ```
 const routerConfig = [
   {
@@ -88,3 +87,6 @@ const routerConfig = [
   },
 ]
 ```
+
+## Issues:
+`react-router` trows a [warning when using memoized components in render props](https://github.com/ReactTraining/react-router/issues/6471)
