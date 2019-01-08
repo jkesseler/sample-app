@@ -1,6 +1,7 @@
 # Roadmap
 - Server side rendering
-- Multiple routes
+- [x] Multiple routes
+- [x] Route based layouts
 - Route based code-splitting
 - Authentication and protected routes
 - API Proxy to protect API key and endpoints
