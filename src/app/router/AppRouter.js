@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Switch } from 'react-router-dom';
 import AppRoute from './AppRoute';
 
-export const Router = ({ routes }) => (
+export const AppRouter = ({ routes }) => (
   <Switch>
     {routes.map(({
       component, path, layout, exact,
@@ -19,7 +19,7 @@ export const Router = ({ routes }) => (
   </Switch>
 );
 
-Router.propTypes = {
+AppRouter.propTypes = {
   routes: PropTypes.arrayOf(
     PropTypes.shape({
       component: PropTypes.element.isRequried,
@@ -30,4 +30,4 @@ Router.propTypes = {
   ).isRequired,
 };
 
-export default Router;
+export default AppRouter;

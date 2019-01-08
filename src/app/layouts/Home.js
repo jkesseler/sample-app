@@ -1,6 +1,7 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import { Paper } from '@material-ui/core';
+import routes from '../routes';
 
 import Header from '../components/Header';
 
@@ -13,7 +14,7 @@ export const Home = ({ children }) => (
       backgroundColor: '#fafafa',
     }}
   >
-    <Header>Home</Header>
+    <Header menuItems={routes}>Home</Header>
     { children }
   </Paper>
 );

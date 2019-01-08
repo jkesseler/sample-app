@@ -7,13 +7,10 @@ import {
 
 import SimpleMenu from './SimpleMenu';
 
-import routerConfig from '../routerConfig';
-
-
-export const Header = ({ children }) => (
+export const Header = ({ children, menuItems }) => (
   <AppBar color="primary" position="static" style={{ height: 64 }}>
     <Toolbar style={{ height: 60 }}>
-      <SimpleMenu menuItems={routerConfig} />
+      <SimpleMenu menuItems={menuItems} />
       <Typography variant="h6" color="inherit">{ children }</Typography>
     </Toolbar>
   </AppBar>
@@ -24,6 +21,12 @@ Header.propTypes = {
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
   ]).isRequired,
+  menuItems: PropTypes.arrayOf(
+    PropTypes.shape({
+      path: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
 };
 
 export default memo(Header);

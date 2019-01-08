@@ -5,8 +5,8 @@ import Loadable from 'react-loadable';
 import { BrowserRouter } from 'react-router-dom';
 import { Frontload } from 'react-frontload';
 import configureStore from './app/state';
-import Routes from './app/routes';
-import routerConfig from './app/routerConfig';
+import AppRouter from './app/router';
+import routes from './app/routes';
 
 const storeInstance = configureStore();
 
@@ -14,7 +14,7 @@ const Application = (
   <Provider store={storeInstance}>
     <Frontload noServerRender>
       <BrowserRouter>
-        <Routes routes={routerConfig} />
+        <AppRouter routes={routes} />
       </BrowserRouter>
     </Frontload>
   </Provider>

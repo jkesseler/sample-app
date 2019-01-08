@@ -1,7 +1,7 @@
 import * as Pages from './pages';
 import * as Layouts from './layouts';
 
-const routerConfig = [
+const routes = [
   {
     component: Pages.Home,
     layout: Layouts.Home,
@@ -18,4 +18,4 @@ const routerConfig = [
   },
 ];
 
-export default routerConfig;
+export default routes;
