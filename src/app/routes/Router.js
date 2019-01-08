@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Switch } from 'react-router-dom';
 import AppRoute from './AppRoute';
@@ -30,4 +30,4 @@ Router.propTypes = {
   ).isRequired,
 };
 
-export default memo(Router);
+export default Router;
