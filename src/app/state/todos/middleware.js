@@ -9,9 +9,22 @@ const persistTodoMiddleware = store => next => (action) => {
     // TODO: Load todo's server side and create intialState there
     case actionTypes.LOAD_START:
       fetcher()
-        .then((response) => {
-          next(loadTodosSuccess(response.data));
-        }).catch((err) => {
+        .then(response => response.data)
+        .then((data) => {
+          if (!data || data.constructor !== Array) {
+            throw (new Error('response.data is not an Array'));
+          }
+
+          /**
+            TODO: Find out why it is possible to have duplicates in the first place
+                  monkey patching is not the desired solution
+           */
+          return data.filter(
+            (element, position, array) => array.indexOf(element) === position,
+          );
+        })
+        .then(cleanedData => next(loadTodosSuccess(cleanedData)))
+        .catch((err) => {
           next(loadTodosFail(err));
         });
       break;
