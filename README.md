@@ -51,14 +51,15 @@ Loosely based on https://github.com/FortechRomania/react-redux-complete-example
 
 ## State
 State management for a specific functional domain.
-This is roughly based on [ducks modular redux](https://github.com/erikras/ducks-modular-redux) and [re-ducs](https://github.com/alexnm/re-ducks)
+This is roughly based on [ducks modular redux](https://github.com/erikras/ducks-modular-redux)
+and [re-ducks](https://github.com/alexnm/re-ducks)
 
 ## Components, Pages and layouts
 <!--
-Since a page is a composed components we could
-drop Pages from the project in favour of connected HoC's
+Since a 'page' is composed of components we could drop 'Pages' from the project
+in favour of connected HoC's.
 -->
-A Page is a collection of Components composed.
+A Page is a collection of composed Components.
 A Layout is composed of one of more HoC's configured in `routes`.
 
 
