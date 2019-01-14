@@ -98,3 +98,5 @@ const routes = [
 # Issues:
 - `react-router` trows a [warning when using memoized components in render props](https://github.com/ReactTraining/react-router/issues/6471)
 - There is no server to proxy API requests yet. So the SPI details (such as api-key).
+- Aliases have to be fongured in two places. `config-overrides.js` for compiling
+  and running and `.babelrc` for linting and IDE integration
