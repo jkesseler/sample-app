@@ -17,10 +17,21 @@ exports[`Header renders without crashing 1`] = `
       }
     }
   >
+    <SimpleMenu
+      menuItems={
+        Array [
+          Object {
+            "path": "/",
+            "title": "test",
+          },
+        ]
+      }
+    />
     <WithStyles(Typography)
       color="inherit"
+      variant="h6"
     >
-      Todo App
+      Test
     </WithStyles(Typography)>
   </WithStyles(Toolbar)>
 </WithStyles(AppBar)>
