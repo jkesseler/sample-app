@@ -37,7 +37,7 @@ TodoApp.defaultProps = {
 
 const mapStateToProps = state => ({
   todos: state.todos,
-  shouldLoad: (state.todos.length <= 0),
+  shouldLoad: !!(state.todos.length <= 0),
 });
 
 

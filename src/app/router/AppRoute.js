@@ -14,7 +14,7 @@ export const AppRoute = ({ component: Component, layout: Layout, ...rest }) => (
 );
 
 
-const layoutPropType = PropTypes.oneOfType([
+const componentPropType = PropTypes.oneOfType([
   PropTypes.string,
   PropTypes.func,
   PropTypes.element,
@@ -22,8 +22,8 @@ const layoutPropType = PropTypes.oneOfType([
 
 
 AppRoute.propTypes = {
-  component: layoutPropType.isRequired,
-  layout: layoutPropType.isRequired,
+  component: componentPropType.isRequired,
+  layout: componentPropType.isRequired,
 };
 
 export default memo(AppRoute);
