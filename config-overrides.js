@@ -10,6 +10,7 @@ module.exports = override(
         '~layouts': './src/app/layouts',
         '~pages': './src/app/pages',
         '~utils': './src/app/utils',
+        '~state': './src/app/state',
       },
     }],
   ),

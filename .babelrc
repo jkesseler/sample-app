@@ -6,7 +6,8 @@
         "~containers": "./src/app/containers",
         "~layouts": "./src/app/layouts",
         "~pages": "./src/app/pages",
-        "~utils": "./src/app/utils"
+        "~utils": "./src/app/utils",
+        "~state": "./src/app/state"
       }
     }]
   ]
