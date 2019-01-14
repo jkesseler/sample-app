@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import AddTodo from '~ui/AddTodo';
+import TodoList from '~ui/TodoList';
 import { loadTodos } from '../../state/todos/actions';
-import AddTodo from '../../components/AddTodo';
-import TodoList from '../../components/TodoList';
 
 
 class TodoApp extends Component {

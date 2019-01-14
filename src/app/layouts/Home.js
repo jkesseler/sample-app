@@ -1,9 +1,9 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import { Paper } from '@material-ui/core';
+import Header from '~ui/Header';
 import routes from '../routes';
 
-import Header from '../components/Header';
 
 export const Home = ({ children }) => (
   <Paper
