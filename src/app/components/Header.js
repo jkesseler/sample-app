@@ -11,7 +11,9 @@ export const Header = ({ children, menuItems }) => (
   <AppBar color="primary" position="static" style={{ height: 64 }}>
     <Toolbar style={{ height: 60 }}>
       <SimpleMenu menuItems={menuItems} />
-      <Typography variant="h6" color="inherit">{ children }</Typography>
+      <Typography variant="h6" color="inherit">
+        { children }
+      </Typography>
     </Toolbar>
   </AppBar>
 );

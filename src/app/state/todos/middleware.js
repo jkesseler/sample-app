@@ -14,16 +14,8 @@ const persistTodoMiddleware = store => next => (action) => {
           if (!data || data.constructor !== Array) {
             throw (new Error('response.data is not an Array'));
           }
-
-          /**
-            TODO: Find out why it is possible to have duplicates in the first place
-                  monkey patching is not the desired solution
-           */
-          return data.filter(
-            (element, position, array) => array.indexOf(element) === position,
-          );
+          next(loadTodosSuccess(data));
         })
-        .then(cleanedData => next(loadTodosSuccess(cleanedData)))
         .catch((err) => {
           next(loadTodosFail(err));
         });

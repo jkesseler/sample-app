@@ -7,6 +7,11 @@
     "browser": true,
     "jest": true,
   },
+  "settings": {
+    "import/resolver": {
+      "babel-module": {}
+    }
+  },
   "rules": {
     "complexity": ["warn", 10],
     "import/imports-first": ["error", "absolute-first"],
@@ -19,7 +24,7 @@
     "no-underscore-dangle": ["error", { "allow": ["__INITIAL_STATE__"] }],
     "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx"] }],
     // This rule invalidates all nested jsx *and* html childs
-    "react/jsx-one-expression-per-line": false,
+    "react/jsx-one-expression-per-line": ["off"],
     "react/prop-types": ["error", { customValidators: ["skipUndeclared"] } ],
   }
 }
