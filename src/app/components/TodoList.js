@@ -3,30 +3,34 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { List, Paper } from '@material-ui/core';
+import LinearProgress from '@material-ui/core/LinearProgress';
 
 import * as actions from '../state/todos/actions';
 import TodoListItem from './TodoListItem';
 
 
 export const TodoList = ({ todos, toggleTodo, deleteTodo }) => {
-  if (todos && todos.length > 0) {
-    return (
-      <Paper>
-        <List style={{ overflow: 'scroll' }}>
-          {todos.map((todo, idx) => (
-            <TodoListItem
-              {...todo}
-              key={todo.id}
-              divider={idx !== todos.length - 1}
-              onButtonClick={() => deleteTodo(todo)}
-              onCheckboxToggle={() => toggleTodo(todo)}
-            />
-          ))}
-        </List>
-      </Paper>
-    );
-  }
-  return null;
+  const loading = !(todos && todos.length > 0);
+
+  return (
+    <Paper>
+      { loading
+        ? (<LinearProgress />)
+        : (
+          <List style={{ overflow: 'scroll' }}>
+            {todos.map((todo, idx) => (
+              <TodoListItem
+                {...todo}
+                key={todo.id}
+                divider={idx !== todos.length - 1}
+                onButtonClick={() => deleteTodo(todo)}
+                onCheckboxToggle={() => toggleTodo(todo)}
+              />
+            ))}
+          </List>
+        )}
+    </Paper>
+  );
 };
 
 TodoList.propTypes = {

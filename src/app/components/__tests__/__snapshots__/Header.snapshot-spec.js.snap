@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders without crashing 1`] = `
+<WithStyles(AppBar)
+  color="primary"
+  position="static"
+  style={
+    Object {
+      "height": 64,
+    }
+  }
+>
+  <WithStyles(Toolbar)
+    style={
+      Object {
+        "height": 60,
+      }
+    }
+  >
+    <SimpleMenu
+      menuItems={
+        Array [
+          Object {
+            "path": "/",
+            "title": "test",
+          },
+        ]
+      }
+    />
+    <WithStyles(Typography)
+      color="inherit"
+      variant="h6"
+    >
+      Test
+    </WithStyles(Typography)>
+  </WithStyles(Toolbar)>
+</WithStyles(AppBar)>
+`;

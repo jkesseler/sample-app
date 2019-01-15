@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 
-// non memoized component
+// The named export is non-memoized component
 import { TodoListItem } from '../TodoListItem';
 
 const defaultProps = {

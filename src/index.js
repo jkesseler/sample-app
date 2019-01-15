@@ -2,16 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import Loadable from 'react-loadable';
+import { BrowserRouter } from 'react-router-dom';
 import { Frontload } from 'react-frontload';
-import TodoApp from './app/components/TodoApp';
 import configureStore from './app/state';
+import AppRouter from './app/router';
+import routes from './app/routes';
 
 const storeInstance = configureStore();
 
 const Application = (
   <Provider store={storeInstance}>
     <Frontload noServerRender>
-      <TodoApp />
+      <BrowserRouter>
+        <AppRouter routes={routes} />
+      </BrowserRouter>
     </Frontload>
   </Provider>
 );

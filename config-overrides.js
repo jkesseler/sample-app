@@ -1,0 +1,17 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
+const { override, addBabelPlugins } = require('customize-cra');
+
+module.exports = override(
+  ...addBabelPlugins(
+    ['module-resolver', {
+      alias: {
+        '~ui': './src/app/components',
+        '~containers': './src/app/containers',
+        '~layouts': './src/app/layouts',
+        '~pages': './src/app/pages',
+        '~utils': './src/app/utils',
+        '~state': './src/app/state',
+      },
+    }],
+  ),
+);

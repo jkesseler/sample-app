@@ -2,11 +2,13 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 
-import TodoApp from '../TodoApp';
+import { Default } from '../Default';
 
-describe('TodoApp', () => {
+const Child = () => (<span>fake child</span>);
+
+describe('Base', () => {
   it('renders without crashing', () => {
-    const component = shallow(<TodoApp />);
+    const component = shallow(<Default><Child /></Default>);
     expect(shallowToJson(component)).toMatchSnapshot();
   });
 });
