@@ -3,17 +3,17 @@ import * as actionTypes from './action-types';
 // Action creators
 export const addTodo = text => ({
   type: actionTypes.ADD,
-  text,
+  payload: { text },
 });
 
 export const toggleTodo = id => ({
   type: actionTypes.TOGGLE,
-  id,
+  payload: { id },
 });
 
 export const deleteTodo = id => ({
   type: actionTypes.DELETE,
-  id,
+  payload: { id },
 });
 
 export const loadTodos = () => ({
@@ -22,10 +22,11 @@ export const loadTodos = () => ({
 
 export const loadTodosFail = error => ({
   type: actionTypes.LOAD_ERROR,
-  error,
+  payload: error,
+  error: true,
 });
 
 export const loadTodosSuccess = todos => ({
   type: actionTypes.LOAD_SUCCESS,
-  todos,
+  payload: { todos },
 });

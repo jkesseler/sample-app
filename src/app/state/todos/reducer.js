@@ -2,13 +2,13 @@ import uuidv4 from 'uuid/v4';
 import * as actionTypes from './action-types';
 
 // Abstracting reducer functions makes it easier to unit test
-export function todoLoadSuccess(state, action) {
-  const { todos } = action;
+export function todoLoadSuccess(state, { payload }) {
+  const { todos } = payload;
   return state.concat(todos);
 }
 
-export function todoAdd(state, action) {
-  if (!action.text) {
+export function todoAdd(state, { payload }) {
+  if (!payload.text) {
     return state;
   }
 
@@ -16,15 +16,15 @@ export function todoAdd(state, action) {
     ...state,
     {
       id: uuidv4(),
-      text: action.text,
+      text: payload.text,
       checked: false,
     },
   ];
 }
 
-export function toggleTodo(state, action) {
+export function toggleTodo(state, { payload }) {
   return state.map(
-    todo => (todo.id === action.id ? { ...todo, checked: !todo.checked } : todo),
+    todo => (todo.id === payload.id ? { ...todo, checked: !todo.checked } : todo),
   );
 }
 
