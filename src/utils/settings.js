@@ -11,10 +11,13 @@ const settings = {
     return requireEnvVar('REACT_APP_JSONBIN_API_KEY');
   },
 
-  get apiUrl() {
+  get apiBaseUrl() {
+    return requireEnvVar('REACT_APP_JSONBIN_API_URI');
+  },
+
+  get todoApiUrl() {
     const url = requireEnvVar('REACT_APP_JSONBIN_API_URI');
     const id = requireEnvVar('REACT_APP_JSONBIN_BIN_ID');
-
     return `${url}${id}`;
   },
 

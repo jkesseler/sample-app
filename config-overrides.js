@@ -9,7 +9,7 @@ module.exports = override(
         '~containers': './src/app/containers',
         '~layouts': './src/app/layouts',
         '~pages': './src/app/pages',
-        '~utils': './src/app/utils',
+        '~utils': './src/utils',
         '~state': './src/app/state',
       },
     }],
