@@ -1,5 +1,4 @@
-import settings from '~utils/settings';
-import fetcher from '~utils/fetcher';
+import clientFetcher from '~utils/client-fetcher';
 import { loadTodosFail, loadTodosSuccess } from './actions';
 import * as actionTypes from './action-types';
 
@@ -10,7 +9,7 @@ const persistTodoMiddleware = store => next => (action) => {
   switch (action.type) {
     // TODO: Load todo's server side and create intialState there
     case actionTypes.LOAD_START:
-      fetcher({ url: settings.todoApiUrl })
+      clientFetcher({ path: '/todos' })
         .then(response => response.data)
         .then((data) => {
           if (!data || data.constructor !== Array) {
@@ -30,9 +29,10 @@ const persistTodoMiddleware = store => next => (action) => {
       const { todos } = store.getState();
 
       if (todos.length > 0) {
-        fetcher({
-          url: settings.todoApiUrl,
+        clientFetcher({
           data: todos,
+          method: 'put',
+          path: '/todos',
         });
       }
     }
