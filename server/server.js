@@ -7,10 +7,22 @@ import settings from '~utils/settings';
 import serverFetcher from '~utils/server-fetcher';
 
 
+// This just a stub middleware for protected routes
+const ensureAuthenticated = (req, res, next) => {
+  if (/* req.isAuthenticated() */ true) { // eslint-disable-line no-constant-condition
+    next();
+  } else {
+    // Autorisation error
+    res.status(401);
+    res.end();
+  }
+};
+
+
 const app = express();
 app.use(express.json());
 
-/* Preflight response */
+// Preflight response
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, OPTIONS');
@@ -18,6 +30,9 @@ app.use((req, res, next) => {
   next();
 });
 
+
+// Error handling
+// Always the last middleware
 app.use((err, req, res, next) => {
   // log the error, for now just console.log
   console.log('Error: ', err.message);
@@ -26,8 +41,9 @@ app.use((err, req, res, next) => {
   next();
 });
 
+
 // Routes
-app.get('/todos', (req, res) => {
+app.get('/todos', ensureAuthenticated, (req, res) => {
   serverFetcher({ url: settings.todoApiUrl })
     .then(apiResponse => apiResponse.data)
     .then(data => res.json(data))
@@ -37,7 +53,7 @@ app.get('/todos', (req, res) => {
     });
 });
 
-app.put('/todos', (req, res) => {
+app.put('/todos', ensureAuthenticated, (req, res) => {
   serverFetcher({ url: settings.todoApiUrl, method: 'put', data: req.body })
     .then(apiResponse => apiResponse.data)
     .then(data => res.json(data))

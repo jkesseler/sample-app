@@ -29,9 +29,9 @@ export function toggleTodo(state, { payload }) {
 }
 
 
-export function removeTodo(state, action) {
+export function removeTodo(state, { payload }) {
   return state.filter(
-    todo => todo.id !== action.id,
+    todo => todo.id !== payload.id,
   );
 }
 

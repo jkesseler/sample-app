@@ -15,35 +15,12 @@ describe('todos actions', () => {
     const text = 'some text';
     const expectedAction = [{
       type: actionTypes.ADD,
-      text,
+      payload: { text },
     }];
 
     store.dispatch(actions.addTodo(text));
     expect(store.getActions()).toEqual(expectedAction);
   });
-
-  it('dispatches toggeTodo and retuns correct payload', () => {
-    const id = 1;
-    const expectedAction = [{
-      type: actionTypes.TOGGLE,
-      id,
-    }];
-
-    store.dispatch(actions.toggleTodo(id));
-    expect(store.getActions()).toEqual(expectedAction);
-  });
-
-  it('dispatches deleteTodo and retuns correct payload', () => {
-    const id = 1;
-    const expectedAction = [{
-      type: actionTypes.DELETE,
-      id,
-    }];
-
-    store.dispatch(actions.deleteTodo(id));
-    expect(store.getActions()).toEqual(expectedAction);
-  });
-
 
   it('dispatches loadTodos and retuns correct payload', () => {
     const expectedAction = [{
@@ -55,20 +32,26 @@ describe('todos actions', () => {
   });
 
   it('dispatches loadTodosFail and retuns correct payload', () => {
+    const error = new Error('some error');
     const expectedAction = [{
       type: actionTypes.LOAD_ERROR,
+      payload: error,
+      error: true,
     }];
 
-    store.dispatch(actions.loadTodosFail());
+    store.dispatch(actions.loadTodosFail(error));
     expect(store.getActions()).toEqual(expectedAction);
   });
 
   it('dispatches loadTodosSuccess and retuns correct payload', () => {
     const expectedAction = [{
       type: actionTypes.LOAD_SUCCESS,
+      payload: {
+        todos: [],
+      },
     }];
 
-    store.dispatch(actions.loadTodosSuccess());
+    store.dispatch(actions.loadTodosSuccess([]));
     expect(store.getActions()).toEqual(expectedAction);
   });
 });
