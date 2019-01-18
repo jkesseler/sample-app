@@ -99,9 +99,9 @@ const routes = [
 ```
 
 ## Fetching data
-Clients don't fetch data directly from services that require secret API keys.
+Clients don't fetch data directly from services that require secret API keys
 since that would expose the secret key in the browser. Instead there is a API
-proxy that handles requests.
+proxy that handles requests in `./server`.
 
 
 # Issues:
