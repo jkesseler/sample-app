@@ -1,32 +1,32 @@
-import * as actionTypes from './action-types';
+import * as types from './types';
 
 // Action creators
 export const addTodo = text => ({
-  type: actionTypes.ADD,
+  type: types.ADD,
   payload: { text },
 });
 
 export const toggleTodo = id => ({
-  type: actionTypes.TOGGLE,
+  type: types.TOGGLE,
   payload: { id },
 });
 
 export const deleteTodo = id => ({
-  type: actionTypes.DELETE,
+  type: types.DELETE,
   payload: { id },
 });
 
 export const loadTodos = () => ({
-  type: actionTypes.LOAD_START,
+  type: types.LOAD_START,
 });
 
 export const loadTodosFail = error => ({
-  type: actionTypes.LOAD_ERROR,
+  type: types.LOAD_ERROR,
   payload: error,
   error: true,
 });
 
 export const loadTodosSuccess = todos => ({
-  type: actionTypes.LOAD_SUCCESS,
+  type: types.LOAD_SUCCESS,
   payload: { todos },
 });

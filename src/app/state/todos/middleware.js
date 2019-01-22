@@ -1,6 +1,6 @@
 import clientFetcher from '~utils/client-fetcher';
 import { loadTodosFail, loadTodosSuccess } from './actions';
-import * as actionTypes from './action-types';
+import * as types from './types';
 
 
 const persistTodoMiddleware = store => next => (action) => {
@@ -8,7 +8,7 @@ const persistTodoMiddleware = store => next => (action) => {
 
   switch (action.type) {
     // TODO: Load todo's server side and create intialState there
-    case actionTypes.LOAD_START:
+    case types.LOAD_START:
       clientFetcher({ path: '/todos' })
         .then(response => response.data)
         .then((data) => {
@@ -23,9 +23,9 @@ const persistTodoMiddleware = store => next => (action) => {
       break;
 
     // On any state mutation the entire state is stored in JSONBIN.io
-    case actionTypes.ADD:
-    case actionTypes.TOGGLE:
-    case actionTypes.DELETE: {
+    case types.ADD:
+    case types.TOGGLE:
+    case types.DELETE: {
       const { todos } = store.getState();
 
       if (todos.length > 0) {

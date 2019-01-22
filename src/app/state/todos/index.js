@@ -1,11 +1,11 @@
 import reducer from './reducer';
 import persistTodoMiddleware from './middleware';
-import * as actionTypes from './action-types';
+import * as types from './types';
 import * as actions from './actions';
 
 export {
   actions,
-  actionTypes,
+  types,
   persistTodoMiddleware as middleware,
 };
 

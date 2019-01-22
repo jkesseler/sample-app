@@ -24,7 +24,8 @@
     "uuid": "^3.3.2"
   },
   "scripts": {
-    "start": "react-app-rewired start",
+    "start": "npm-run-all --parallel start:*",
+    "start:client": "react-app-rewired start",
     "start:proxy": "nodemon server/index.js --exec babel-node",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
