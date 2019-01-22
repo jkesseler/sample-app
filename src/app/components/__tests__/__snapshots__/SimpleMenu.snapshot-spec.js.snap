@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SimpleMenu renders without crashing 1`] = `
+<Fragment>
+  <WithStyles(IconButton)
+    aria-haspopup="true"
+    aria-label="Menu"
+    color="inherit"
+    onClick={[Function]}
+  >
+    <pure(MenuIcon) />
+  </WithStyles(IconButton)>
+  <WithStyles(Menu)
+    id="simple-menu"
+    onClose={[Function]}
+    open={false}
+    style={
+      Object {
+        "marginTop": 16,
+      }
+    }
+  >
+    <Link
+      key="/"
+      replace={false}
+      style={
+        Object {
+          "display": "block",
+          "textDecoration": "none",
+        }
+      }
+      to="/"
+    >
+      <WithStyles(MenuItem)
+        onClick={[Function]}
+      >
+        test
+      </WithStyles(MenuItem)>
+    </Link>
+  </WithStyles(Menu)>
+</Fragment>
+`;
