@@ -36,7 +36,7 @@ export class AddTodo extends Component {
     const { value } = this.state;
     return (
       <Paper>
-        <Grid style={{ margin: 16, padding: 16 }} container>
+        <Grid style={{ marginBottom: 16, padding: 16 }} container>
           <Grid xs={10} md={11} style={{ paddingRight: 16 }} item>
             <TextField
               onChange={this.handleInputChange}
