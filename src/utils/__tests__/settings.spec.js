@@ -21,6 +21,10 @@ describe('settings', () => {
     expect(settings.clientRequestTimeout).toBe(500);
   });
 
+  it('should return client base url', () => {
+    expect(settings.clientApiBaseUrl).toBe(process.env.REACT_APP_API_BASE_URL);
+  });
+
 
   it('should get the api url', () => {
     const url = process.env.SERVER_APP_JSONBIN_API_URI;
