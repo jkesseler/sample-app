@@ -19,19 +19,19 @@ describe('todos reducer', () => {
   });
 
   it('should add todos on load success', () => {
-    const action = { todos: [mockTodo] };
+    const action = { payload: { todos: [mockTodo] } };
     const result = todoLoadSuccess([], action);
     expect(result).toContainObject(mockTodo);
   });
 
   it('should add a todo', () => {
-    const action = { text: 'dummy text' };
+    const action = { payload: { text: 'dummy text' } };
     const result = todoAdd([], action);
-    expect(result).toContainObject(action);
+    expect(result).toContainObject(action.payload);
   });
 
   it('should toggle a todo', () => {
-    const action = { id: mockTodo.id };
+    const action = { payload: { id: mockTodo.id } };
     const initialState = [mockTodo];
     const expectedState = [{ ...mockTodo, checked: !mockTodo.checked }];
     const result = toggleTodo(initialState, action);
@@ -39,8 +39,8 @@ describe('todos reducer', () => {
     expect(result).toEqual(expectedState);
   });
 
-  it('shoudl remove a todo', () => {
-    const action = { id: mockTodo.id };
+  it('should remove a todo', () => {
+    const action = { payload: { id: mockTodo.id } };
     const initialState = [mockTodo];
     const result = removeTodo(initialState, action);
 

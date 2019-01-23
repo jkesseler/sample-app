@@ -6,7 +6,6 @@ module.exports = override(
     ['module-resolver', {
       alias: {
         '~ui': './src/app/components',
-        '~containers': './src/app/containers',
         '~layouts': './src/app/layouts',
         '~pages': './src/app/pages',
         '~utils': './src/utils',

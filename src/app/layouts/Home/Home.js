@@ -1,11 +1,11 @@
 import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 import { Paper } from '@material-ui/core';
-import routes from '../routes';
+import Header from '~ui/Header';
+import routes from '../../routes';
 
-import Header from '../components/Header';
 
-export const Default = ({ children }) => (
+export const Home = ({ children }) => (
   <Paper
     elevation={0}
     style={{
@@ -14,16 +14,16 @@ export const Default = ({ children }) => (
       backgroundColor: '#fafafa',
     }}
   >
-    <Header menuItems={routes}>Todos</Header>
+    <Header menuItems={routes}>Home</Header>
     { children }
   </Paper>
 );
 
-Default.propTypes = {
+Home.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,
   ]).isRequired,
 };
 
-export default memo(Default);
+export default memo(Home);

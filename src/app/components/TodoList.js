@@ -17,7 +17,7 @@ export const TodoList = ({ todos, toggleTodo, deleteTodo }) => {
       { loading
         ? (<LinearProgress />)
         : (
-          <List style={{ overflow: 'scroll' }}>
+          <List>
             {todos.map((todo, idx) => (
               <TodoListItem
                 {...todo}
