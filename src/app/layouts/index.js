@@ -1,4 +1,4 @@
-import Default from './Default';
-import Home from './Home';
+import Default from './Default/Default';
+import Home from './Home/Home';
 
 export { Default, Home };

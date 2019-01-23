@@ -8,20 +8,24 @@ function requireEnvVar(varName, defaultValue) {
 
 const settings = {
   get apiKey() {
-    return requireEnvVar('REACT_APP_JSONBIN_API_KEY');
-  },
-
-  get apiBaseUrl() {
-    return requireEnvVar('REACT_APP_JSONBIN_API_URI');
+    return requireEnvVar('SERVER_APP_JSONBIN_API_KEY', null);
   },
 
   get todoApiUrl() {
-    const url = requireEnvVar('REACT_APP_JSONBIN_API_URI');
-    const id = requireEnvVar('REACT_APP_JSONBIN_BIN_ID');
+    const url = requireEnvVar('SERVER_APP_JSONBIN_API_URI');
+    const id = requireEnvVar('SERVER_APP_JSONBIN_BIN_ID');
     return `${url}${id}`;
   },
 
-  get requestTimeout() {
+  get serverRequestTimeout() {
+    return requireEnvVar('SERVER_APP_REQUEST_TIMEOUT_MS', 500);
+  },
+
+  get clientApiBaseUrl() {
+    return requireEnvVar('REACT_APP_API_BASE_URL');
+  },
+
+  get clientRequestTimeout() {
     return requireEnvVar('REACT_APP_REQUEST_TIMEOUT_MS', 500);
   },
 };

@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Base renders without crashing 1`] = `
+<div
+  className="main"
+>
+  <WithStyles(Paper)
+    className="content"
+    elevation={0}
+  >
+    <React.Memo
+      menuItems={
+        Array [
+          Object {
+            "component": [Function],
+            "exact": true,
+            "layout": Object {
+              "$$typeof": Symbol(react.memo),
+              "compare": null,
+              "type": [Function],
+            },
+            "path": "/",
+            "title": "Home",
+          },
+          Object {
+            "component": [Function],
+            "exact": true,
+            "layout": undefined,
+            "path": "/todos",
+            "title": "Todos",
+          },
+        ]
+      }
+    >
+      Todos
+    </React.Memo>
+    <Child />
+  </WithStyles(Paper)>
+  <footer
+    className="footer"
+  >
+    <WithStyles(Typography)
+      align="center"
+      gutterBottom={true}
+      variant="h6"
+    >
+      Footer
+    </WithStyles(Typography)>
+    <WithStyles(Typography)
+      align="center"
+      color="textSecondary"
+      component="p"
+      variant="subtitle1"
+    >
+      Something here to give the footer a purpose!
+    </WithStyles(Typography)>
+  </footer>
+</div>
+`;

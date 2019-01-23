@@ -6,7 +6,7 @@ import AppRoute from './AppRoute';
 export const AppRouter = ({ routes }) => (
   <Switch>
     {routes.map(({
-      component, path, layout, exact,
+      component, path, layout, exact, title,
     }) => (
       <AppRoute
         component={component}
@@ -14,6 +14,7 @@ export const AppRouter = ({ routes }) => (
         path={path}
         layout={layout}
         exact={exact || false}
+        title={title}
       />
     ))}
   </Switch>
@@ -26,6 +27,7 @@ AppRouter.propTypes = {
       path: PropTypes.string.isRequired,
       layout: PropTypes.element.isRequried,
       exact: PropTypes.bool,
+      title: PropTypes.string.isRequired,
     }),
   ).isRequired,
 };

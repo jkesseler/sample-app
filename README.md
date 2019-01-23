@@ -7,17 +7,21 @@ It's a basic project setup with the following:
 - Server Side rendering
 
 # Getting started
-Clone this repo and `yarn install`
-
 ## Create an account on jsonbin.io
 - Create a new bin and private key.
 - Add the bin ID and private key to `.env`
+
+Clone this repo and `yarn install`
+`yarn start:proxy`
+`yarn start`
+
 
 *Please note:*
 This is for demo purposes only! The key and bin id are easily viewed in dev-tools.
 
 
 # Commands
+- `yarn start:proxy` Start the local API proxy
 - `yarn start` Starts the client in development
 - `yarn build` Run production build
 - `yarn serve` Serve production build with SSR
@@ -94,9 +98,17 @@ const routes = [
 ]
 ```
 
+## Fetching data
+Clients don't fetch data directly from services that require secret API keys
+since that would expose the secret key in the browser. Instead there is a API
+proxy that handles requests in `./server`.
+
 
 # Issues:
 - `react-router` trows a [warning when using memoized components in render props](https://github.com/ReactTraining/react-router/issues/6471)
-- There is no server to proxy API requests yet. So the SPI details (such as api-key).
+
 - Aliases have to be configured in two places. `config-overrides.js` for compiling
   and running and `.babelrc` for linting and IDE integration
+
+- A beta version of `eslint-import-resolver-babel-module`is required
+  to have linting work when `@babel/env` is used
