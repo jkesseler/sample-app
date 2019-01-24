@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { Suspense, memo } from 'react';
 import PropTypes from 'prop-types';
 import { Route } from 'react-router-dom';
 
@@ -7,7 +7,7 @@ export const AppRoute = ({ component: Component, layout: Layout, ...rest }) => (
     {...rest}
     render={props => (
       <Layout>
-        <Component {...props} />
+        <Suspense fallback={<div>Loading...</div>}><Component {...props} /></Suspense>
       </Layout>
     )}
   />

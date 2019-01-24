@@ -12,7 +12,12 @@ exports[`Base renders without crashing 1`] = `
       menuItems={
         Array [
           Object {
-            "component": [Function],
+            "component": Object {
+              "$$typeof": Symbol(react.lazy),
+              "_ctor": [Function],
+              "_result": null,
+              "_status": -1,
+            },
             "exact": true,
             "layout": Object {
               "$$typeof": Symbol(react.memo),
@@ -23,7 +28,12 @@ exports[`Base renders without crashing 1`] = `
             "title": "Home",
           },
           Object {
-            "component": [Function],
+            "component": Object {
+              "$$typeof": Symbol(react.lazy),
+              "_ctor": [Function],
+              "_result": null,
+              "_status": -1,
+            },
             "exact": true,
             "layout": undefined,
             "path": "/todos",
