@@ -1,0 +1,5 @@
+/**
+  External stylesheets cannot be loaded as a modules
+  But referencing them in a .css file enables budle splitting
+*/
+@import '~react-big-calendar/lib/css/react-big-calendar.css';

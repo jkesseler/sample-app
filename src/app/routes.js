@@ -3,7 +3,7 @@ import * as Layouts from './layouts';
 
 const Home = lazy(() => import('./pages/Home'));
 const Todos = lazy(() => import('./pages/Todos'));
-
+const Scheduler = lazy(() => import('./pages/Scheduler'));
 
 const routes = [
   {
@@ -19,6 +19,14 @@ const routes = [
     path: '/todos',
     exact: true,
     title: 'Todos',
+  },
+  {
+    component: Scheduler,
+    layout: Layouts.Default,
+    path: '/schedule',
+    exact: true,
+    title: 'Scheduler',
+    displayFooter: false,
   },
 ];
 

@@ -7,8 +7,15 @@ export const AppRoute = ({ component: Component, layout: Layout, ...rest }) => (
   <Route
     {...rest}
     render={props => (
-      <Layout>
-        <Suspense fallback={<div style={{ marginTop: 16 }}><LinearProgress color="secondary" variant="query" /></div>}><Component {...props} /></Suspense>
+      <Layout {...rest}>
+        <Suspense fallback={(
+          <div style={{ marginTop: 16 }}>
+            <LinearProgress color="secondary" variant="query" />
+          </div>
+          )}
+        >
+          <Component {...props} />
+        </Suspense>
       </Layout>
     )}
   />
