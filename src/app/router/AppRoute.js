@@ -1,4 +1,5 @@
 import React, { Suspense, memo } from 'react';
+import LinearProgress from '@material-ui/core/LinearProgress';
 import PropTypes from 'prop-types';
 import { Route } from 'react-router-dom';
 
@@ -7,7 +8,7 @@ export const AppRoute = ({ component: Component, layout: Layout, ...rest }) => (
     {...rest}
     render={props => (
       <Layout>
-        <Suspense fallback={<div>Loading...</div>}><Component {...props} /></Suspense>
+        <Suspense fallback={<div style={{ marginTop: 16 }}><LinearProgress color="secondary" variant="query" /></div>}><Component {...props} /></Suspense>
       </Layout>
     )}
   />

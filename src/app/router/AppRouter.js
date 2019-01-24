@@ -6,14 +6,14 @@ import AppRoute from './AppRoute';
 export const AppRouter = ({ routes }) => (
   <Switch>
     {routes.map(({
-      component, path, layout, exact, title,
+      component, path, layout, exact = false, title,
     }) => (
       <AppRoute
         component={component}
         key={path}
         path={path}
         layout={layout}
-        exact={exact || false}
+        exact={exact}
         title={title}
       />
     ))}

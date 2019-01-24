@@ -11,22 +11,21 @@ It's a basic project setup with the following:
 - Create a new bin and private key.
 - Add the bin ID and private key to `.env`
 
-Clone this repo and `yarn install`
-`yarn start:proxy`
-`yarn start`
+Clone this repo and
+`npm install`
+`npm start`
 
+This starts both the API proxy and React client app
 
 *Please note:*
-This is for demo purposes only! The key and bin id are easily viewed in dev-tools.
+This is for demo purposes only!
 
 
 # Commands
-- `yarn start:proxy` Start the local API proxy
-- `yarn start` Starts the client in development
-- `yarn build` Run production build
-- `yarn serve` Serve production build with SSR
-- `yarn test`
-- `yarn lint`
+- `npm start`
+- `npm run build`
+- `npm run test`
+- `npm run lint`
 
 
 # Application structure
