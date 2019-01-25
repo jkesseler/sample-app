@@ -13,6 +13,7 @@ describe('settings', () => {
 
       REACT_APP_REQUEST_TIMEOUT_MS: 750,
       REACT_APP_API_BASE_URL: 'mock',
+      REACT_APP_DEFAULT_LOCALE: 'en-GB',
     };
   });
 
@@ -39,5 +40,14 @@ describe('settings', () => {
 
   it('should get the client request timeout', () => {
     expect(settings.clientRequestTimeout).toBe(process.env.REACT_APP_REQUEST_TIMEOUT_MS);
+  });
+
+  it('should return a default locale', () => {
+    expect(settings.locale).toBe(process.env.REACT_APP_DEFAULT_LOCALE);
+  });
+
+  it('should return a browsers locale', () => {
+    Object.defineProperty(global, 'window', { value: { navigator: { language: 'es' } } });
+    expect(settings.locale).toBe(window.navigator.language);
   });
 });

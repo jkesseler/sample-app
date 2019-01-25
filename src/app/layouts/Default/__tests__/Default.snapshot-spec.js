@@ -6,9 +6,14 @@ import { Default } from '../Default';
 
 const Child = () => (<span>fake child</span>);
 
-describe('Base', () => {
-  it('renders without crashing', () => {
-    const component = shallow(<Default><Child /></Default>);
+describe('Default', () => {
+  it('renders with footer', () => {
+    const component = shallow(<Default title="Title" displayFooter><Child /></Default>);
+    expect(shallowToJson(component)).toMatchSnapshot();
+  });
+
+  it('renders without footer', () => {
+    const component = shallow(<Default title="Title" displayFooter={false}><Child /></Default>);
     expect(shallowToJson(component)).toMatchSnapshot();
   });
 });

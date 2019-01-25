@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Base renders without crashing 1`] = `
+exports[`Default renders with footer 1`] = `
 <div
   className="main"
 >
@@ -39,10 +39,23 @@ exports[`Base renders without crashing 1`] = `
             "path": "/todos",
             "title": "Todos",
           },
+          Object {
+            "component": Object {
+              "$$typeof": Symbol(react.lazy),
+              "_ctor": [Function],
+              "_result": null,
+              "_status": -1,
+            },
+            "displayFooter": false,
+            "exact": true,
+            "layout": undefined,
+            "path": "/schedule",
+            "title": "Scheduler",
+          },
         ]
       }
     >
-      Todos
+      Title
     </React.Memo>
     <Child />
   </WithStyles(Paper)>
@@ -65,5 +78,67 @@ exports[`Base renders without crashing 1`] = `
       Something here to give the footer a purpose!
     </WithStyles(Typography)>
   </footer>
+</div>
+`;
+
+exports[`Default renders without footer 1`] = `
+<div
+  className="main"
+>
+  <WithStyles(Paper)
+    className="content"
+    elevation={0}
+  >
+    <React.Memo
+      menuItems={
+        Array [
+          Object {
+            "component": Object {
+              "$$typeof": Symbol(react.lazy),
+              "_ctor": [Function],
+              "_result": null,
+              "_status": -1,
+            },
+            "exact": true,
+            "layout": Object {
+              "$$typeof": Symbol(react.memo),
+              "compare": null,
+              "type": [Function],
+            },
+            "path": "/",
+            "title": "Home",
+          },
+          Object {
+            "component": Object {
+              "$$typeof": Symbol(react.lazy),
+              "_ctor": [Function],
+              "_result": null,
+              "_status": -1,
+            },
+            "exact": true,
+            "layout": undefined,
+            "path": "/todos",
+            "title": "Todos",
+          },
+          Object {
+            "component": Object {
+              "$$typeof": Symbol(react.lazy),
+              "_ctor": [Function],
+              "_result": null,
+              "_status": -1,
+            },
+            "displayFooter": false,
+            "exact": true,
+            "layout": undefined,
+            "path": "/schedule",
+            "title": "Scheduler",
+          },
+        ]
+      }
+    >
+      Title
+    </React.Memo>
+    <Child />
+  </WithStyles(Paper)>
 </div>
 `;

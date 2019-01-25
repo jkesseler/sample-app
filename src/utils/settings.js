@@ -28,6 +28,13 @@ const settings = {
   get clientRequestTimeout() {
     return requireEnvVar('REACT_APP_REQUEST_TIMEOUT_MS', 500);
   },
+
+  get locale() {
+    if (typeof window !== 'undefined' && window.navigator) {
+      return window.navigator.language;
+    }
+    return requireEnvVar('REACT_APP_DEFAULT_LOCALE');
+  },
 };
 
 export default settings;

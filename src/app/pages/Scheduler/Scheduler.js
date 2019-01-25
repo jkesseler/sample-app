@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import BigCalendar from 'react-big-calendar';
 import moment from 'moment';
+import settings from '~utils/settings';
 import 'moment/locale/nl';
 import dates from './date-utils';
 import './Scheduler.css'; // External styelsheet
@@ -19,7 +20,7 @@ class Scheduler extends Component {
   }
 
   render() {
-    moment.locale('nl');
+    moment.locale(settings.locale);
     const localizer = BigCalendar.momentLocalizer(moment);
     const { viewModel } = this.state;
     const allViews = Object.keys(BigCalendar.Views).map(k => BigCalendar.Views[k]);
