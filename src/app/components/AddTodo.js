@@ -23,6 +23,9 @@ export class AddTodo extends Component {
 
     if (value) {
       addTodo(value);
+      this.setState({
+        value: '',
+      });
     }
   }
 

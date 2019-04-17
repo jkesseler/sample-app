@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Switch } from 'react-router-dom';
 import AppRoute from './AppRoute';
 
+
 export const AppRouter = ({ routes }) => (
   <Switch>
     {routes.map(({
@@ -20,10 +21,11 @@ export const AppRouter = ({ routes }) => (
   </Switch>
 );
 
+/* eslint-disable react/forbid-prop-types */
 AppRouter.propTypes = {
   routes: PropTypes.arrayOf(
     PropTypes.shape({
-      component: PropTypes.element.isRequried,
+      component: PropTypes.any.isRequired,
       path: PropTypes.string.isRequired,
       layout: PropTypes.element.isRequried,
       exact: PropTypes.bool,
@@ -31,5 +33,6 @@ AppRouter.propTypes = {
     }),
   ).isRequired,
 };
+/* eslint-enable react/forbid-prop-types */
 
 export default AppRouter;
